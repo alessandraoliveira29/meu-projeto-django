@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>{% if view.object %}Editar{% else %}Novo{% endif %} Artigo</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin:20px; }
+    header, footer { background:#333; color:#fff; padding:10px; text-align:center; }
+    nav a { color:#fff; margin:0 10px; text-decoration:none; }
+    main { margin:20px 0; }
+    form { max-width:600px; margin:auto; }
+    input, textarea, select { width:100%; padding:8px; margin:6px 0; }
+    .btn { padding:8px 16px; color:#fff; text-decoration:none; border:none; border-radius:4px; cursor:pointer; }
+    .btn-success { background:#28a745; }
+    .btn-secondary { background:#6c757d; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>{% if view.object %}Editar{% else %}Novo{% endif %} Artigo</h1>
+    <nav>
+      <a href="{% url 'artigos:artigo_list' %}">← Voltar à lista</a>
+    </nav>
+  </header>
+  <main>
+    <form method="post" enctype="multipart/form-data">{% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" class="btn btn-success">💾 Guardar</button>
+      <a href="{% url 'artigos:artigo_list' %}" class="btn btn-secondary">Cancelar</a>
+    </form>
+  </main>
+  <footer>
+    &copy; 2025 Alessandra Oliveira
+  </footer>
+</body>
+</html>

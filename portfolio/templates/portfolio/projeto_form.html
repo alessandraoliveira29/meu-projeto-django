@@ -1,0 +1,46 @@
+{% extends "portfolio/base.html" %}
+{% load static %}
+{% block title %}{% if view.object %}Editar{% else %}Novo{% endif %} Projeto{% endblock %}
+
+{% block main %}
+<h2>{% if view.object %}Editar{% else %}Novo{% endif %} Projeto</h2>
+
+<form method="post" enctype="multipart/form-data">{% csrf_token %}
+  {{ form.as_p }}
+
+  <h4>Tecnologias</h4>
+  {{ tec_formset.management_form }}
+  <table>
+    <tr><th>Tecnologia</th><th>Apagar?</th></tr>
+    {% for f in tec_formset %}
+      <tr>
+        <td>{{ f.tecnologia }}</td>
+        <td>{% if f.instance.pk %}{{ f.DELETE }}{% endif %}</td>
+      </tr>
+    {% endfor %}
+  </table>
+
+  <h4>Imagens</h4>
+  {{ img_formset.management_form }}
+  <table>
+    <tr><th>Imagem</th><th>Apagar?</th></tr>
+    {% for f in img_formset %}
+      <tr>
+        <td>{{ f.imagem }}</td>
+        <td>{% if f.instance.pk %}{{ f.DELETE }}{% endif %}</td>
+      </tr>
+    {% endfor %}
+  </table>
+
+  <h4>Detalhes Técnicos</h4>
+  {{ det_formset.management_form }}
+  {% for f in det_formset %}
+     {{ f.as_p }}
+  {% endfor %}
+
+  <button type="submit" style="padding:8px 14px;background:#28a745;color:#fff;border:none;border-radius:4px">
+      💾 Guardar
+  </button>
+  <a href="{% url 'portfolio:proj_list' %}">Cancelar</a>
+</form>
+{% endblock %}

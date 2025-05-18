@@ -1,0 +1,62 @@
+[
+  {
+    "nome": "The Beatles",
+    "genero": "Rock",
+    "nacionalidade": "Reino Unido",
+    "ano_criacao": 1960
+  },
+  {
+    "nome": "Led Zeppelin",
+    "genero": "Rock",
+    "nacionalidade": "Reino Unido",
+    "ano_criacao": 1968
+  },
+  {
+    "nome": "Pink Floyd",
+    "genero": "Rock Progressivo",
+    "nacionalidade": "Reino Unido",
+    "ano_criacao": 1965
+  },
+  {
+    "nome": "AC/DC",
+    "genero": "Hard Rock",
+    "nacionalidade": "Austrália",
+    "ano_criacao": 1973
+  },
+  {
+    "nome": "Queen",
+    "genero": "Rock",
+    "nacionalidade": "Reino Unido",
+    "ano_criacao": 1970
+  },
+  {
+    "nome": "The Rolling Stones",
+    "genero": "Rock",
+    "nacionalidade": "Reino Unido",
+    "ano_criacao": 1962
+  },
+  {
+    "nome": "Guns N' Roses",
+    "genero": "Hard Rock",
+    "nacionalidade": "Estados Unidos",
+    "ano_criacao": 1985
+  },
+  {
+    "nome": "Nirvana",
+    "genero": "Grunge",
+    "nacionalidade": "Estados Unidos",
+    "ano_criacao": 1987
+  },
+  {
+    "nome": "Metallica",
+    "genero": "Heavy Metal",
+    "nacionalidade": "Estados Unidos",
+    "ano_criacao": 1981
+  },
+  {
+    "nome": "Iron Maiden",
+    "genero": "Heavy Metal",
+    "nacionalidade": "Reino Unido",
+    "ano_criacao": 1975
+  }
+]

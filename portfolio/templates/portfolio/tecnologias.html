@@ -1,0 +1,31 @@
+{% extends "portfolio/base.html" %}
+
+{% block main %}
+<h2>🚀 Tecnologias Utilizadas</h2>
+
+{% for tecnologia in tecnologias %}
+  <div style="margin-bottom: 30px; padding: 10px; border: 1px solid #ccc; border-radius: 8px;">
+    <h3>
+      <a href="https://www.google.com/search?q={{ tecnologia.nome }}" target="_blank">
+        {{ tecnologia.nome }}
+      </a>
+    </h3>
+
+    {% if tecnologia.logo %}
+      <img src="{{ tecnologia.logo.url }}" alt="Logo de {{ tecnologia.nome }}" style="height: 100px;">
+    {% endif %}
+
+    <p><strong>Descrição:</strong> {{ tecnologia.descricao }}</p>
+
+    <p><strong>Usada nos projetos:</strong></p>
+    <ul>
+      {% for projeto in tecnologia.projeto_set.all %}
+        <li>{{ projeto.titulo }}</li>
+      {% empty %}
+        <li>Nenhum projeto usa esta tecnologia.</li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endfor %}
+
+{% endblock %}

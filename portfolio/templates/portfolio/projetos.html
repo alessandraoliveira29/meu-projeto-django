@@ -1,0 +1,81 @@
+{% extends "portfolio/base.html" %}
+{% load static %}
+
+{% block title %}Projetos{% endblock %}
+
+{% block main %}
+<h2>📚 Projetos Realizados</h2>
+
+<a href="{% url 'portfolio:proj_create' %}"
+   style="display:inline-block;margin-bottom:25px;padding:8px 14px;
+          background:#28a745;color:#fff;text-decoration:none;border-radius:6px;">
+    ➕ Novo Projeto
+</a>
+
+{% for projeto in projetos %}
+    <div style="margin-bottom:50px;padding:20px;border:1px solid #ddd;border-radius:10px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+            <h3 style="margin:0;">{{ projeto.titulo }}</h3>
+            <div style="white-space:nowrap;font-size:0.9em;">
+                <a href="{% url 'portfolio:proj_update' projeto.pk %}" title="Editar">✏️ Editar</a> |
+                <a href="{% url 'portfolio:proj_delete' projeto.pk %}" title="Apagar">🗑️ Apagar</a>
+            </div>
+        </div>
+
+        <p><strong>Descrição:</strong> {{ projeto.descricao }}</p>
+
+        {% if projeto.disciplina %}
+            <p><strong>Disciplina:</strong> {{ projeto.disciplina.nome }}</p>
+            <p><strong>Ano:</strong> {{ projeto.disciplina.ano }} |
+               <strong>Semestre:</strong> {{ projeto.disciplina.semestre }}</p>
+            <p><strong>Docentes:</strong> {{ projeto.disciplina.docentes }}</p>
+            <p>
+                <a href="{{ projeto.disciplina.link_moodle }}" target="_blank">Moodle</a> |
+                <a href="{{ projeto.disciplina.link_ulusofona }}" target="_blank">Página ULusófona</a>
+            </p>
+        {% endif %}
+
+        {% if projeto.link_github %}
+            <p><strong>Repositório GitHub:</strong>
+               <a href="{{ projeto.link_github }}" target="_blank">{{ projeto.link_github }}</a></p>
+        {% endif %}
+
+        {% if projeto.link_demo %}
+            <p><strong>Demo no YouTube:</strong>
+               <a href="{{ projeto.link_demo }}" target="_blank">{{ projeto.link_demo }}</a></p>
+        {% endif %}
+
+        <p><strong>Conceitos Aplicados:</strong> {{ projeto.conceitos_aplicados }}</p>
+        <p><strong>Desafios Interessantes:</strong> {{ projeto.desafios_interessantes }}</p>
+
+        {% if projeto.tecnologias.all %}
+            <p><strong>Tecnologias Utilizadas:</strong></p>
+            <ul>
+                {% for tecnologia in projeto.tecnologias.all %}
+                    <li>
+                        <strong>{{ tecnologia.nome }}</strong> – {{ tecnologia.descricao }}<br>
+                        {% if tecnologia.logo %}
+                            <img src="{{ tecnologia.logo.url }}" alt="{{ tecnologia.nome }}" width="100"
+                                 style="margin-top:5px;">
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        {% if projeto.imagens.all %}
+            <p><strong>Imagens do Projeto:</strong></p>
+            {% for imagem in projeto.imagens.all %}
+                <img src="{{ imagem.imagem.url }}" alt="Imagem do projeto"
+                     style="width:300px;margin:10px;border-radius:10px;">
+            {% endfor %}
+        {% endif %}
+
+        {% if projeto.detalhestecnicos %}
+            <p><strong>Detalhes Técnicos:</strong> {{ projeto.detalhestecnicos.detalhes }}</p>
+        {% endif %}
+    </div>
+{% empty %}
+    <p>Não há projetos cadastrados.</p>
+{% endfor %}
+{% endblock %}

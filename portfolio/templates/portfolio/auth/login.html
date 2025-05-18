@@ -1,0 +1,14 @@
+{% extends "portfolio/base.html" %}
+{% load static %}
+
+{% block title %}Entrar{% endblock %}
+
+{% block main %}
+<h1>Login</h1>
+<form method="post">{% csrf_token %}
+  {{ form.username.label }} {{ form.username }}<br>
+  {{ form.password.label }} {{ form.password }}<br>
+  <button type="submit">Entrar</button>
+</form>
+<p>Ainda não tem conta? <a href="{% url 'register' %}">Registe-se</a>.</p>
+{% endblock %}

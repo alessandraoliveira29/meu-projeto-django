@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>{{ artigo.titulo }}</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin:20px; }
+    header, footer { background:#333; color:#fff; padding:10px; text-align:center; }
+    nav a { color:#fff; margin:0 10px; text-decoration:none; }
+    main { margin:20px 0; }
+    img { max-width:100%; height:auto; }
+    .btn { padding:6px 12px; background:#007bff; color:#fff; text-decoration:none; border-radius:4px; }
+    .btn-small { font-size:0.9em; padding:4px 8px; }
+    form { margin:15px 0; }
+    textarea, input[type="number"], input[type="text"] { width:100%; padding:8px; margin:4px 0; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>{{ artigo.titulo }}</h1>
+    <nav>
+      <a href="{% url 'artigos:artigo_list' %}">← Voltar</a>
+      <a href="{% url 'artigos:artigo_update' artigo.pk %}">✏️ Editar</a>
+      <a href="{% url 'artigos:artigo_delete' artigo.pk %}">🗑️ Apagar</a>
+    </nav>
+  </header>
+  <main>
+    <p><em>Por {{ artigo.autor.nome }} em {{ artigo.data_publicacao|date:"d/m/Y H:i" }}</em></p>
+    {% if artigo.imagem_capa %}
+      <img src="{{ artigo.imagem_capa.url }}" alt="Capa">
+    {% endif %}
+    <div>{{ artigo.conteudo|linebreaks }}</div>
+
+    <hr>
+    <h3>⭐ Classificação média: {{ media|floatformat:1 }}/5</h3>
+    <form method="post">{% csrf_token %}
+      {{ rate_form.valor }}
+      <button name="rating_submit" class="btn btn-small">Avaliar</button>
+    </form>
+
+    <hr>
+    <h3>💬 Comentários</h3>
+    <ul>
+      {% for c in comentarios %}
+      <li>
+        <strong>{{ c.nome_comentador }}</strong>
+        (<small>{{ c.data|date:"d/m/Y H:i" }}</small>)<br>
+        {{ c.texto|linebreaks }}
+      </li>
+      {% empty %}
+      <li>Seja o primeiro a comentar!</li>
+      {% endfor %}
+    </ul>
+
+    <h4>Adicionar Comentário</h4>
+    <form method="post">{% csrf_token %}
+      {{ com_form.as_p }}
+      <button name="comentario_submit" class="btn btn-small">Enviar</button>
+    </form>
+  </main>
+  <footer>
+    &copy; 2025 Alessandra Oliveira
+  </footer>
+</body>
+</html>

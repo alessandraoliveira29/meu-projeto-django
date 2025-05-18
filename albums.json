@@ -1,0 +1,182 @@
+[
+  {
+    "banda": "The Beatles",
+    "titulo": "Abbey Road",
+    "ano_lancamento": 1969,
+    "musicas": [
+      { "titulo": "Come Together", "duracao": "00:04:20" },
+      { "titulo": "Something", "duracao": "00:03:03" }
+    ]
+  },
+  {
+    "banda": "Led Zeppelin",
+    "titulo": "Led Zeppelin IV",
+    "ano_lancamento": 1971,
+    "musicas": [
+      { "titulo": "Black Dog", "duracao": "00:04:55" },
+      { "titulo": "Stairway to Heaven", "duracao": "00:08:02" }
+    ]
+  },
+  {
+    "banda": "Pink Floyd",
+    "titulo": "The Dark Side of the Moon",
+    "ano_lancamento": 1973,
+    "musicas": [
+      { "titulo": "Time", "duracao": "00:06:53" },
+      { "titulo": "Money", "duracao": "00:06:22" }
+    ]
+  },
+  {
+    "banda": "AC/DC",
+    "titulo": "Back in Black",
+    "ano_lancamento": 1980,
+    "musicas": [
+      { "titulo": "Hells Bells", "duracao": "00:05:12" },
+      { "titulo": "Back in Black", "duracao": "00:04:15" }
+    ]
+  },
+  {
+    "banda": "Queen",
+    "titulo": "A Night at the Opera",
+    "ano_lancamento": 1975,
+    "musicas": [
+      { "titulo": "Bohemian Rhapsody", "duracao": "00:05:55" },
+      { "titulo": "Love of My Life", "duracao": "00:03:38" }
+    ]
+  },
+  {
+    "banda": "The Rolling Stones",
+    "titulo": "Sticky Fingers",
+    "ano_lancamento": 1971,
+    "musicas": [
+      { "titulo": "Brown Sugar", "duracao": "00:03:49" },
+      { "titulo": "Wild Horses", "duracao": "00:05:44" }
+    ]
+  },
+  {
+    "banda": "Guns N' Roses",
+    "titulo": "Appetite for Destruction",
+    "ano_lancamento": 1987,
+    "musicas": [
+      { "titulo": "Welcome to the Jungle", "duracao": "00:04:31" },
+      { "titulo": "Sweet Child o' Mine", "duracao": "00:05:56" }
+    ]
+  },
+  {
+    "banda": "Nirvana",
+    "titulo": "Nevermind",
+    "ano_lancamento": 1991,
+    "musicas": [
+      { "titulo": "Smells Like Teen Spirit", "duracao": "00:05:01" },
+      { "titulo": "Come As You Are", "duracao": "00:03:38" }
+    ]
+  },
+  {
+    "banda": "Metallica",
+    "titulo": "Master of Puppets",
+    "ano_lancamento": 1986,
+    "musicas": [
+      { "titulo": "Battery", "duracao": "00:05:10" },
+      { "titulo": "Master of Puppets", "duracao": "00:08:35" }
+    ]
+  },
+  {
+    "banda": "Iron Maiden",
+    "titulo": "The Number of the Beast",
+    "ano_lancamento": 1982,
+    "musicas": [
+      { "titulo": "The Number of the Beast", "duracao": "00:04:51" },
+      { "titulo": "Run to the Hills", "duracao": "00:03:53" }
+    ]
+  },
+  {
+    "banda": "The Beatles",
+    "titulo": "Sgt. Pepper's Lonely Hearts Club Band",
+    "ano_lancamento": 1967,
+    "musicas": [
+      { "titulo": "Lucy in the Sky with Diamonds", "duracao": "00:03:28" },
+      { "titulo": "A Day in the Life", "duracao": "00:05:33" }
+    ]
+  },
+  {
+    "banda": "Led Zeppelin",
+    "titulo": "Physical Graffiti",
+    "ano_lancamento": 1975,
+    "musicas": [
+      { "titulo": "Kashmir", "duracao": "00:08:32" },
+      { "titulo": "Trampled Under Foot", "duracao": "00:05:36" }
+    ]
+  },
+  {
+    "banda": "Pink Floyd",
+    "titulo": "Wish You Were Here",
+    "ano_lancamento": 1975,
+    "musicas": [
+      { "titulo": "Shine On You Crazy Diamond", "duracao": "00:13:30" },
+      { "titulo": "Wish You Were Here", "duracao": "00:05:34" }
+    ]
+  },
+  {
+    "banda": "AC/DC",
+    "titulo": "Highway to Hell",
+    "ano_lancamento": 1979,
+    "musicas": [
+      { "titulo": "Highway to Hell", "duracao": "00:03:28" },
+      { "titulo": "If You Want Blood (You've Got It)", "duracao": "00:04:36" }
+    ]
+  },
+  {
+    "banda": "Queen",
+    "titulo": "News of the World",
+    "ano_lancamento": 1977,
+    "musicas": [
+      { "titulo": "We Will Rock You", "duracao": "00:02:02" },
+      { "titulo": "We Are the Champions", "duracao": "00:02:59" }
+    ]
+  },
+  {
+    "banda": "The Rolling Stones",
+    "titulo": "Exile on Main St.",
+    "ano_lancamento": 1972,
+    "musicas": [
+      { "titulo": "Tumbling Dice", "duracao": "00:03:45" },
+      { "titulo": "Rocks Off", "duracao": "00:04:31" }
+    ]
+  },
+  {
+    "banda": "Guns N' Roses",
+    "titulo": "Use Your Illusion I",
+    "ano_lancamento": 1991,
+    "musicas": [
+      { "titulo": "November Rain", "duracao": "00:08:57" },
+      { "titulo": "Don't Cry (Original)", "duracao": "00:04:44" }
+    ]
+  },
+  {
+    "banda": "Nirvana",
+    "titulo": "In Utero",
+    "ano_lancamento": 1993,
+    "musicas": [
+      { "titulo": "Heart-Shaped Box", "duracao": "00:04:39" },
+      { "titulo": "All Apologies", "duracao": "00:03:50" }
+    ]
+  },
+  {
+    "banda": "Metallica",
+    "titulo": "Ride the Lightning",
+    "ano_lancamento": 1984,
+    "musicas": [
+      { "titulo": "Fade to Black", "duracao": "00:06:57" },
+      { "titulo": "Creeping Death", "duracao": "00:06:36" }
+    ]
+  },
+  {
+    "banda": "Iron Maiden",
+    "titulo": "Powerslave",
+    "ano_lancamento": 1984,
+    "musicas": [
+      { "titulo": "Aces High", "duracao": "00:04:30" },
+      { "titulo": "2 Minutes to Midnight", "duracao": "00:06:00" }
+    ]
+  }
+]

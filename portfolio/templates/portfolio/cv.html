@@ -1,0 +1,28 @@
+{% extends "portfolio/base.html" %}
+
+{% block main %}
+<section style="padding: 20px;">
+    <h1>Currículo de Alessandra Oliveira</h1>
+
+    <h2>Formação Acadêmica</h2>
+    <ul>
+        <li>Licenciatura em Engenharia Informática - Universidade Lusófona</li>
+    </ul>
+
+    <h2>Experiência</h2>
+    <ul>
+        <li>Desenvolvimento de aplicações web usando Django e MySQL</li>
+        <li>Participação em projetos académicos de programação e web design</li>
+    </ul>
+
+    <h2>Projetos Realizados</h2>
+    <p>Veja os projetos que já desenvolvi:
+        <a href="{% url 'portfolio:proj_list' %}">Projetos</a>
+    </p>
+
+    <h2>Tecnologias que domino</h2>
+    <p>Conheça as tecnologias que utilizo:
+        <a href="{% url 'portfolio:tecnologias' %}">Tecnologias</a>
+    </p>
+</section>
+{% endblock %}

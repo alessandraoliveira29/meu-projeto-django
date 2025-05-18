@@ -1,0 +1,60 @@
+{% extends "portfolio/base.html" %}
+{% load static %}
+
+{% block main %}
+<h1>📚 Apresentação da Aplicação Portfolio</h1>
+
+<section>
+  <h2>🚀 Tecnologias Utilizadas</h2>
+  <ul>
+    <li><strong>Backend:</strong> Python, Django</li>
+    <li><strong>Frontend:</strong> HTML5, CSS3, Templates Django</li>
+    <li><strong>Base de Dados:</strong> MySQL</li>
+    <li><strong>Serviços Externos:</strong> PythonAnywhere para hospedagem, GitHub para versionamento de código</li>
+  </ul>
+</section>
+
+<section>
+  <h2>🏛️ Arquitetura da Aplicação</h2>
+  <p>A aplicação segue o padrão MVT (Model-View-Template) do Django:</p>
+  <ul>
+    <li><strong>Model:</strong> Representa os dados (Disciplina, Projeto, Tecnologia, etc.)</li>
+    <li><strong>View:</strong> Funções em Python que controlam o fluxo de dados</li>
+    <li><strong>Template:</strong> Ficheiros HTML que renderizam o conteúdo para o utilizador</li>
+  </ul>
+  <p>Componentes principais:</p>
+  <ul>
+    <li>Base de Dados MySQL</li>
+    <li>Servidor Backend Django</li>
+    <li>Frontend com HTML e CSS</li>
+    <li>Serviços externos: PythonAnywhere, GitHub</li>
+  </ul>
+  <h3>Desenho da Arquitetura:</h3>
+  <img src="{% static 'imagens/arquitetura.png' %}" alt="Arquitetura da Aplicação" style="max-width: 100%; height: auto;">
+</section>
+
+<section>
+  <h2>📊 Modelação da Base de Dados</h2>
+  <p>A base de dados inclui as seguintes entidades principais:</p>
+  <ul>
+    <li><strong>Disciplina</strong> — relacionada com <strong>Projeto</strong> (OneToOne)</li>
+    <li><strong>Projeto</strong> — relacionado com várias <strong>Tecnologias</strong> (ManyToMany)</li>
+    <li><strong>Projeto</strong> — relacionado com várias <strong>Imagens</strong> (OneToMany)</li>
+    <li><strong>Projeto</strong> — relacionado com <strong>Detalhes Técnicos</strong> (OneToOne)</li>
+  </ul>
+  <h3>Diagrama DER:</h3>
+  <img src="{% static 'imagens/output.png' %}" alt="Diagrama de Entidade Relação" style="max-width: 100%; height: auto;">
+</section>
+
+<section>
+  <h2>🗺️ Mapa do Site</h2>
+  <p>Segue o mapa de páginas da aplicação:</p>
+  <img src="{% static 'imagens/mapa_site.png' %}" alt="Mapa do Site" style="max-width: 100%; height: auto;">
+</section>
+
+<section>
+  <h2>🔗 GitHub</h2>
+  <p>Repositório do projeto: <a href="https://github.com/alessandraoliveira29/diwlab11" target="_blank">Clique aqui para aceder ao GitHub</a></p>
+</section>
+
+{% endblock %}
