@@ -1,40 +1,48 @@
 from django import forms
 from django.forms import inlineformset_factory
-from .models import Projeto, Tecnologia, ImagemProjeto, DetalhesTecnicos
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
+
+from .models import (
+    Projeto,
+    Tecnologia,
+    ImagemProjeto,
+    DetalhesTecnicos,
+)
 
 class ProjetoForm(forms.ModelForm):
     class Meta:
-        model = Projeto
+        model  = Projeto
         fields = [
-            'titulo', 'descricao',
-            'link_github', 'link_demo',
-            'conceitos_aplicados', 'desafios_interessantes',
-            'disciplina'
+            "titulo", "descricao",
+            "link_github", "link_demo",
+            "conceitos_aplicados", "desafios_interessantes",
+            "disciplina",
         ]
 
 TecnologiaFormSet = inlineformset_factory(
     Projeto,
     Projeto.tecnologias.through,
-    fields=['tecnologia'],
+    fields=["tecnologia"],
     extra=1,
-    can_delete=True
+    can_delete=True,
 )
 
 ImagemFormSet = inlineformset_factory(
     Projeto,
     ImagemProjeto,
-    fields=['imagem'],
+    fields=["imagem"],
     extra=1,
-    can_delete=True
+    can_delete=True,
 )
 
 DetalhesFormSet = inlineformset_factory(
     Projeto,
     DetalhesTecnicos,
-    fields=['detalhes'],
+    fields=["detalhes"],
     extra=1,
     max_num=1,
-    can_delete=True
+    can_delete=True,
 )
 
 class RegisterForm(UserCreationForm):
@@ -42,4 +50,4 @@ class RegisterForm(UserCreationForm):
 
     class Meta:
         model  = User
-        fields = ['username', 'email', 'password1', 'password2']
+        fields = ["username", "email", "password1", "password2"]
